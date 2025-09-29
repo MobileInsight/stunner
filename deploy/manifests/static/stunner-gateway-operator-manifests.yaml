@@ -363,7 +363,10 @@ spec:
       nodeSelector:
         kubernetes.io/os: linux
       tolerations:
-        []
+        - key: kubernetes.io/arch
+          operator: Equal
+          value: "arm64"
+          effect: NoSchedule
 ---
 apiVersion: apps/v1
 kind: Deployment
